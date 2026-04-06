@@ -1,0 +1,87 @@
+/* src/components/Agent/AgentDrawer/AgentDrawer.css */
+
+.agent-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.agent-drawer-overlay.show {
+  opacity: 1;
+}
+
+.agent-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: rgb(var(--bg-sidebar-l));
+  /* 使用 Coal & Amber 主色调 */
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agent-drawer.open {
+  right: 0;
+}
+
+.agent-drawer-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(var(--bg-sidebar-r));
+  /* 稍微浅一点的辅助色 */
+  flex-shrink: 0;
+}
+
+.agent-drawer-body {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: rgb(var(--bg-sidebar-l));
+  /* 保持与 drawer 统一 */
+}
+
+/* Ensure ChatContainer works well inside drawer */
+.agent-drawer-body .chat-container {
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
+.agent-drawer-body .chat-container.initial {
+  justify-content: center;
+}
+
+.agent-drawer-body .message-list {
+  padding: 1rem;
+}
+
+.agent-drawer-body .chat-bottom-area {
+  padding: 1rem;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.agent-drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+}

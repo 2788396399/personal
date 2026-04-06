@@ -1,0 +1,56 @@
+/* src/components/common/Textarea/Textarea.css */
+
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  width: 100%;
+}
+
+.textarea-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.textarea-field {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  line-height: var(--line-spacing, 1.6);
+  transition: all var(--transition-fast);
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea-field:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.textarea-field::placeholder {
+  color: var(--color-text-muted);
+}
+
+.textarea-field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.textarea--error .textarea-field {
+  border-color: var(--color-danger);
+}
+
+.textarea-error-msg {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+}
+
+.textarea-helper-msg {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}

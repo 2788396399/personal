@@ -1,0 +1,41 @@
+/* src/components/Outline/ChapterOutlineEditor/ChapterOutlineEditor.css */
+.chapter-outline-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.chapter-outline-editor .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.chapter-outline-editor textarea.input-field {
+  resize: vertical;
+  min-height: 80px;
+  padding: var(--spacing-3);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+}
+
+.chapter-outline-editor select.input-field {
+  padding: var(--spacing-2);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+}
+
+.chapter-outline-editor .editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-border);
+}

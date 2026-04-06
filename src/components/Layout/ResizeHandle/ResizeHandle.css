@@ -1,0 +1,87 @@
+/* ResizeHandle Styles */
+
+.resize-handle {
+  position: relative;
+  flex-shrink: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+.resize-handle-vertical {
+  width: 6px;
+  cursor: col-resize;
+  margin: 0 -3px;
+  position: relative;
+}
+
+.resize-handle-vertical::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: var(--color-border);
+  transition: background-color 0.2s, width 0.2s;
+}
+
+.resize-handle-vertical:hover {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(99, 102, 241, 0.05),
+    transparent
+  );
+}
+
+.resize-handle-vertical:hover::after {
+  background: var(--color-primary);
+  width: 2px;
+}
+
+.resize-handle-horizontal {
+  height: 6px;
+  cursor: row-resize;
+  margin: -3px 0;
+}
+
+.resize-handle-horizontal::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 100%;
+  background: var(--color-border);
+  transition: background-color 0.2s, height 0.2s;
+}
+
+.resize-handle-horizontal:hover {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(99, 102, 241, 0.05),
+    transparent
+  );
+}
+
+.resize-handle-horizontal:hover::after {
+  background: var(--color-primary);
+  height: 2px;
+}
+
+/* Dragging state */
+body.resizing {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+body.resizing * {
+  pointer-events: none !important;
+}
+
+body.resizing-horizontal {
+  cursor: row-resize !important;
+}

@@ -1,0 +1,114 @@
+/* src/components/Outline/OutlinePanel/OutlinePanel.css */
+
+.outline-panel {
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Panel */
+.outline-panel::-webkit-scrollbar {
+  width: 20px;
+}
+
+.outline-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.outline-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+
+.outline-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+  background-clip: content-box;
+}
+
+.outline-panel::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.4) !important;
+  background-clip: content-box;
+}
+
+.outline-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.outline-panel-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.outline-book-info {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.outline-book-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.outline-book-info-title-area {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  cursor: pointer;
+}
+
+.outline-book-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.expand-icon {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.outline-book-synopsis {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.outline-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+}
+
+.outline-section-title {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-2);
+}
+
+.outline-empty {
+  text-align: center;
+  padding: var(--spacing-8);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}

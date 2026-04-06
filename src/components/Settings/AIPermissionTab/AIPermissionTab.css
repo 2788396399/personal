@@ -1,0 +1,133 @@
+/* src/components/Settings/AIPermissionTab/AIPermissionTab.css */
+
+.ai-permission-tab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.permission-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.permission-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.permission-group-title {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-2);
+}
+
+.permission-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.permission-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  min-height: 72px;
+}
+
+.permission-item:hover {
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-border-hover);
+}
+
+.permission-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  margin-right: var(--spacing-4);
+}
+
+.permission-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.permission-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Toggle Switch */
+.ai-toggle-switch {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: var(--spacing-4);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.ai-toggle-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ai-toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4b5563; /* 提高未选中状态的对比度 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ai-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+input:checked + .ai-toggle-slider {
+  background-color: #6366f1; /* 直接使用颜色代码确保可见 */
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+input:checked + .ai-toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* 增加悬停效果方便确认位置 */
+.ai-toggle-switch:hover .ai-toggle-slider {
+  background-color: #6b7280;
+}
+
+input:checked:hover + .ai-toggle-slider {
+  background-color: #818cf8;
+}

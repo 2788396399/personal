@@ -1,0 +1,106 @@
+.confirm-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  isolation: isolate;
+  z-index: 10030;
+  animation: confirmDialogFadeIn 0.2s ease-out;
+}
+
+.confirm-dialog-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(420px, calc(100vw - 2rem));
+  background: #171b26;
+  border: 1px solid rgb(var(--border-primary));
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.confirm-dialog-header {
+  padding: 1.25rem 1.5rem 0;
+}
+
+.confirm-dialog-title {
+  font-family: 'Spectral', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(var(--text-primary));
+  margin: 0;
+}
+
+.confirm-dialog-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.confirm-dialog-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  flex-shrink: 0;
+}
+
+.confirm-dialog-message {
+  margin: 0;
+  color: rgb(var(--text-secondary));
+  line-height: 1.6;
+}
+
+.confirm-dialog-footer {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.confirm-dialog-cancel,
+.confirm-dialog-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 40px;
+  padding: 0 1.25rem;
+}
+
+.confirm-dialog-cancel {
+  background: transparent;
+  color: rgb(var(--text-tertiary));
+  border: 1px solid rgb(var(--border-primary));
+}
+
+.confirm-dialog-cancel:hover {
+  color: rgb(var(--text-primary));
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.confirm-dialog-confirm {
+  background: #ef4444;
+  color: white;
+  border: none;
+}
+
+.confirm-dialog-confirm:hover {
+  background: #dc2626;
+}
+
+@keyframes confirmDialogFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

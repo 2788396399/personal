@@ -1,0 +1,112 @@
+/* ChatInput Styles - Advanced Sophistication Refactor */
+
+.chat-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: transparent;
+}
+
+.chat-input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(var(--bg-sidebar-l), 0.5); /* 使用统一背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.chat-input-wrapper:focus-within {
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-input-textarea {
+  width: 100%;
+  padding: 1.25rem;
+  background: transparent;
+  border: none;
+  color: rgb(var(--text-primary));
+  font-size: 0.875rem;
+  line-height: 1.6;
+  resize: none;
+  min-height: 110px;
+  max-height: 350px;
+  font-family: var(--font-body);
+}
+
+.chat-input-textarea:focus { outline: none; }
+.chat-input-textarea::placeholder { color: rgb(var(--text-tertiary)); opacity: 0.4; }
+
+/* AI Control Command Bar */
+.chat-input-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--divider-subtle);
+}
+
+.chat-input-tools {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Secondary Tech Button - Circular Ripple */
+.chat-input-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: rgb(var(--text-tertiary));
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-input-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgb(var(--text-primary));
+}
+
+.chat-input-btn:active:not(:disabled) { transform: scale(0.95); }
+
+/* Floating Main Send Button - Expanded Neon Glow */
+.chat-send-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+.chat-send-btn:active:not(:disabled) { transform: scale(0.95); }
+
+.chat-send-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  box-shadow: none;
+}

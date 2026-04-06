@@ -1,0 +1,58 @@
+/* src/components/Character/CharacterEditor/CharacterEditor.css */
+
+.character-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  padding: var(--spacing-2);
+}
+
+.character-editor-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.character-editor-section-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-2);
+}
+
+.character-editor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.character-editor-tags {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.character-editor-tag-input {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.character-editor-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-2);
+}
+
+.character-editor-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+  position: sticky;
+  bottom: 0;
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-4) 0;
+  border-top: 1px solid var(--color-border);
+}

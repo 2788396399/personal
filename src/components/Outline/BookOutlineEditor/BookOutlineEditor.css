@@ -1,0 +1,51 @@
+/* src/components/Outline/BookOutlineEditor/BookOutlineEditor.css */
+.book-outline-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.book-outline-editor .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.book-outline-editor label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.book-outline-editor input,
+.book-outline-editor textarea {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  transition: border-color 0.2s;
+}
+
+.book-outline-editor input:focus,
+.book-outline-editor textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.book-outline-editor .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.book-outline-editor-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}

@@ -1,0 +1,44 @@
+/* src/components/Project/NewProjectModal/NewProjectModal.css */
+
+.new-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.new-project-cover-upload {
+  width: 100%;
+  height: 150px;
+  background-color: var(--color-bg-tertiary);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text-muted);
+  gap: var(--spacing-2);
+}
+
+.new-project-cover-upload:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+.new-project-cover-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.new-project-cover-icon {
+  font-size: 24px;
+}
+
+.new-project-cover-text {
+  font-size: var(--text-sm);
+}

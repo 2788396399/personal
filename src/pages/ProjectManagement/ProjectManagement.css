@@ -1,0 +1,33 @@
+/* src/pages/ProjectManagement/ProjectManagement.css */
+
+.project-management {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+}
+
+.project-management-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-6);
+}
+
+.project-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.project-management-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-8);
+  justify-items: center;
+}

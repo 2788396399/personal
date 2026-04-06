@@ -1,0 +1,66 @@
+/* src/components/Character/CharacterCard/CharacterCard.css */
+
+.character-card {
+  padding: var(--spacing-4);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  cursor: pointer;
+}
+
+.character-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.character-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.character-card-name {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.character-card-basic {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: var(--spacing-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.character-card-personality {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  min-height: 24px;
+}
+
+.character-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-top: auto;
+  padding-top: var(--spacing-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.character-card-actions {
+  display: flex;
+  gap: var(--spacing-1);
+}

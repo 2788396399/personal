@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   AI Novel Writer - Coal & Amber Overhaul
+   Focus: Breathing Space, Serif Writing, and Warm Accents
+   ======================================== */
+
+:root {
+  /* Coal & Slate Palette (No Pure Black) */
+  --bg-app-base: 12 17 27;
+  /* #0C111B - Deep Blue Charcoal */
+  --bg-sidebar-l: 18 24 35;
+  /* #121823 - Left Explorer */
+  --bg-sidebar-r: 24 32 45;
+  /* #18202D - Assistant Control */
+  --bg-editor-surface: 36 46 64;
+  /* #242E40 - Slate Card Background */
+
+  /* Semantic Aliases */
+  --bg-primary: var(--bg-editor-surface);
+  --bg-secondary: var(--bg-sidebar-l);
+  --bg-tertiary: var(--bg-sidebar-r);
+  --bg-elevated: 51 65 85;
+
+  /* Legacy Compatibility Aliases */
+  --color-bg-primary: rgb(var(--bg-sidebar-l));
+  --color-bg-secondary: rgb(var(--bg-sidebar-r));
+  --color-bg-tertiary: rgb(var(--bg-editor-surface));
+  --color-text-primary: rgb(var(--text-primary));
+  --color-text-secondary: rgb(var(--text-secondary));
+  --color-text-muted: rgb(var(--text-muted));
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-primary: rgb(var(--accent-primary));
+  --color-accent: rgb(var(--accent-secondary));
+
+  /* High-Readability Typography */
+  --text-primary: 244 247 251;
+  /* #F4F7FB - High Contrast Slate */
+  --text-secondary: 161 173 191;
+  /* #A1ADBF - Muted Metadata */
+  --text-tertiary: 117 131 154;
+  /* #75839A - Low Sat Status */
+  --text-muted: 82 96 118;
+  /* #526076 - Faded Text */
+
+  /* Warm Action & Status Accents */
+  --accent-primary: 245 158 11;
+  /* #F59E0B - Amber Action */
+  --accent-secondary: 6 182 212;
+  /* #06B6D4 - Cyan Highlight */
+  --accent-success: 16 185 129;
+  /* #10B981 */
+
+  /* Advanced Effects */
+  --gradient-brand: linear-gradient(135deg, #F59E0B, #D97706);
+  --glow-amber: 0 0 15px rgba(245, 158, 11, 0.2);
+  --glow-cyan: 0 0 15px rgba(6, 182, 212, 0.2);
+
+  /* Precision Radius (Softer 12px) */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+
+  /* Typography Stacks */
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Noto Serif SC', 'Georgia', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --transition-tech: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-pop: 180ms ease-out;
+  --transition-smooth: 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  --divider-subtle: rgba(255, 255, 255, 0.06);
+  --shadow-soft: 0 20px 60px rgba(5, 10, 18, 0.28);
+  --shadow-panel: 0 28px 80px rgba(6, 12, 22, 0.34);
+}
+
+/* ========================================
+   Global Refinements
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: rgb(var(--text-primary));
+  background: rgb(var(--bg-app-base));
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  caret-color: rgb(var(--accent-primary));
+}
+
+/* Scrollbar - High Visibility */
+*::-webkit-scrollbar {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 10px !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #4b5563 !important;
+  /* 更明显的深灰色 */
+  border-radius: 10px !important;
+  border: 4px solid transparent !important;
+  background-clip: content-box !important;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #6366f1 !important;
+  /* 悬停时变为紫色 */
+  background-clip: content-box !important;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: #4f46e5 !important;
+  /* 选中时变为深紫色且不透明 */
+  background-clip: content-box !important;
+}
+
+/* Global Button Surface - Capsule / Ghost Logic */
+.btn-capsule {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  /* Capsule Shape */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: rgb(var(--text-secondary));
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all var(--transition-pop);
+  cursor: pointer;
+}
+
+.btn-capsule:hover {
+  background: rgba(var(--accent-primary), 0.1);
+  border-color: rgba(var(--accent-primary), 0.3);
+  color: rgb(var(--accent-primary));
+  box-shadow: var(--glow-amber);
+}
+
+.btn-capsule.active {
+  background: var(--gradient-brand);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Common Elevated Layer Logic */
+.card-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}

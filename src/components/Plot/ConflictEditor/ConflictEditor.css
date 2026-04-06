@@ -1,0 +1,49 @@
+/* src/components/Plot/ConflictEditor/ConflictEditor.css */
+.plot-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.plot-editor .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.plot-editor .form-row {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.plot-editor .flex-1 {
+  flex: 1;
+}
+
+.plot-editor .input-field {
+  padding: var(--spacing-3);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--text-sm);
+}
+
+.plot-editor textarea.input-field {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.plot-editor select.input-field {
+  padding: var(--spacing-2);
+}
+
+.plot-editor .editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-border);
+}

@@ -1,0 +1,163 @@
+/* MessageList & MessageItem Styles - IDE Matte Theme Refactoring */
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: transparent;
+}
+
+.message-item {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 100%;
+  animation: messageFadeIn 0.2s ease forwards;
+}
+
+@keyframes messageFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-avatar {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--border-primary), 0.04);
+  color: rgb(var(--text-tertiary));
+  border: 1px solid rgba(var(--border-primary), 0.06);
+}
+
+.message-avatar.assistant {
+  background: rgba(var(--accent-primary), 0.1);
+  color: rgb(var(--accent-primary));
+}
+
+.message-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-panel {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: rgb(var(--text-primary)); /* 使用 Coal & Amber 高对比度文字 */
+  background: rgba(255, 255, 255, 0.04); /* 微光背景 */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.message-panel.user {
+  background: rgba(245, 158, 11, 0.1); /* Amber 动作色微透 */
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.message-panel.assistant {
+  background: rgb(var(--bg-sidebar-r)); /* 深蓝灰色辅助背景 */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.message-text p {
+  margin-bottom: 0.75rem;
+}
+
+/* Streaming Content Styling */
+.streaming-text {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.streaming-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: rgb(var(--accent-primary));
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: caretBlink 0.8s infinite;
+  border-radius: 1px;
+}
+
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Fade in for each new content block */
+.message-item.assistant .message-text {
+  animation: contentFadeIn 0.3s ease-out;
+}
+
+@keyframes contentFadeIn {
+  from { opacity: 0.95; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-meta {
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 10px;
+  color: rgb(var(--text-muted));
+}
+
+.message-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+}
+
+.message-copy:hover {
+  color: rgb(var(--text-secondary));
+}
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: rgba(var(--border-primary), 0.04);
+  border-radius: 12px;
+  width: fit-content;
+  border: 1px solid rgba(var(--border-primary), 0.05);
+  margin-left: 2.5rem; /* Match avatar alignment if needed, or keep as is */
+}
+
+.typing-dot {
+  width: 5px;
+  height: 5px;
+  background: rgb(var(--accent-primary));
+  opacity: 0.6;
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 100% { 
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
