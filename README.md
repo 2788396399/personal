@@ -1,3 +1,4 @@
+<<<<<<<<< Temporary merge branch 1
 # AI Long Novel Generator
 
 A React-based AI-assisted novel writing tool that supports collaborative generation of long novels through conversational interaction with AI.
@@ -92,4 +93,9 @@ src/
 - React Markdown (Markdown Rendering)
 - IndexedDB (Large Data Storage)
 
+## License
 
+MIT License
+=========
+# personal
+>>>>>>>>> Temporary merge branch 2
