@@ -92,6 +92,4 @@ src/
 - React Markdown (Markdown Rendering)
 - IndexedDB (Large Data Storage)
 
-## License
 
-MIT License
